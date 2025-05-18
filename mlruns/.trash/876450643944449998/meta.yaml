@@ -1,0 +1,7 @@
+artifact_location: file:///C:/Users/s30111011808329/MLOps-Course-Labs/MLOps-Course-Labs/mlruns/876450643944449998
+creation_time: 1747570742394
+experiment_id: '876450643944449998'
+last_update_time: 1747571118160
+lifecycle_stage: deleted
+name: bank_consumer_churn_prediction
+tags: {}

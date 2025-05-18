@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/s30111011808329/MLOps-Course-Labs/MLOps-Course-Labs/mlruns/568248294312870829/928c3de51be449ea957aa8ff167c9292/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '568248294312870829'
+lifecycle_stage: active
+run_id: 928c3de51be449ea957aa8ff167c9292
+run_name: enthused-bee-459
+run_uuid: 928c3de51be449ea957aa8ff167c9292
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1747570837746
+status: 1
+tags: []
+user_id: s30111011808329
