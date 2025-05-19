@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1747648528072
+current_stage: None
+description: ''
+last_updated_timestamp: 1747648528072
+name: XGboost
+run_id: 5ff62cd238e5409396341b79d5b0fe54
+run_link: ''
+source: file:///C:/Users/s30111011808329/MLOps-Course-Labs/MLOps-Course-Labs/mlruns/568248294312870829/5ff62cd238e5409396341b79d5b0fe54/artifacts/model
+status: READY
+status_message: null
+storage_location: file:///C:/Users/s30111011808329/MLOps-Course-Labs/MLOps-Course-Labs/mlruns/568248294312870829/5ff62cd238e5409396341b79d5b0fe54/artifacts/model
+user_id: null
+version: 1

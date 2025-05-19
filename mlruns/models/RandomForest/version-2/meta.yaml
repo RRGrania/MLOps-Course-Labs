@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1747648584486
+current_stage: None
+description: ''
+last_updated_timestamp: 1747648584486
+name: RandomForest
+run_id: 858e8c20575a40689094d35ef0fd917f
+run_link: ''
+source: models:/RandomForest/1
+status: READY
+status_message: null
+storage_location: file:///C:/Users/s30111011808329/MLOps-Course-Labs/MLOps-Course-Labs/mlruns/568248294312870829/858e8c20575a40689094d35ef0fd917f/artifacts/model
+user_id: null
+version: 2

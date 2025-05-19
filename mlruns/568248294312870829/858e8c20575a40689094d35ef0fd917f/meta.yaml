@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/s30111011808329/MLOps-Course-Labs/MLOps-Course-Labs/mlruns/568248294312870829/858e8c20575a40689094d35ef0fd917f/artifacts
+end_time: 1747578018337
+entry_point_name: ''
+experiment_id: '568248294312870829'
+lifecycle_stage: active
+run_id: 858e8c20575a40689094d35ef0fd917f
+run_name: polite-quail-693
+run_uuid: 858e8c20575a40689094d35ef0fd917f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1747578000993
+status: 3
+tags: []
+user_id: rania
