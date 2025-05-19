@@ -6,7 +6,6 @@ from sklearn.model_selection import train_test_split
 import mlflow
 import mlflow.sklearn
 
-# Set environment variable (optional, for MLflow tracking)
 os.environ['LOGNAME'] = "rania"
 
 def main():
