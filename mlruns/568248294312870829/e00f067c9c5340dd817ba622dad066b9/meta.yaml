@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/s30111011808329/MLOps-Course-Labs/MLOps-Course-Labs/mlruns/568248294312870829/e00f067c9c5340dd817ba622dad066b9/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '568248294312870829'
+lifecycle_stage: active
+run_id: e00f067c9c5340dd817ba622dad066b9
+run_name: resilient-ox-444
+run_uuid: e00f067c9c5340dd817ba622dad066b9
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1747694258275
+status: 1
+tags: []
+user_id: rania

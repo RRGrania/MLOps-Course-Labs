@@ -5,6 +5,7 @@ from sklearn.metrics import accuracy_score
 from sklearn.model_selection import train_test_split
 import mlflow
 import mlflow.sklearn
+import joblib
 
 os.environ['LOGNAME'] = "rania"
 
@@ -27,28 +28,35 @@ def main():
     # One-hot encoding for categorical variables
     X = pd.get_dummies(X)
 
-    # Split the dataset
+    # Split the dataset into training and testing sets
     X_train, X_test, y_train, y_test = train_test_split(
         X, y, test_size=0.2, random_state=42
     )
 
-    # Set MLflow experiment
+    # Set the MLflow experiment name
     mlflow.set_experiment("Bank_Churn_Prediction")
 
-    # Start MLflow run
+    # Start an MLflow run
     with mlflow.start_run():
         # Initialize and train the model
         model = RandomForestClassifier(n_estimators=100, random_state=42)
         model.fit(X_train, y_train)
 
-        # Predict and evaluate
         preds = model.predict(X_test)
         acc = accuracy_score(y_test, preds)
         print(f"Test Accuracy: {acc:.4f}")
 
-        # Log metrics and model to MLflow
         mlflow.log_metric("accuracy", acc)
-        mlflow.sklearn.log_model(model, "model", input_example=X_train.head(5))
+
+        # Fix schema warning: convert int columns to float64 for input_example
+        sample_input = X_train.head(5).copy()
+        int_cols = sample_input.select_dtypes(include=['int']).columns
+        sample_input[int_cols] = sample_input[int_cols].astype('float64')
+
+        mlflow.sklearn.log_model(model, "model", input_example=sample_input)
+
+        joblib.dump(model, "model.pkl")
+        joblib.dump(X_train.columns.tolist(), "columns.pkl")
 
 if __name__ == "__main__":
     main()

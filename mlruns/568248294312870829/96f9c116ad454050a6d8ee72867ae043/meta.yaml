@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/s30111011808329/MLOps-Course-Labs/MLOps-Course-Labs/mlruns/568248294312870829/96f9c116ad454050a6d8ee72867ae043/artifacts
+end_time: 1747694314574
+entry_point_name: ''
+experiment_id: '568248294312870829'
+lifecycle_stage: active
+run_id: 96f9c116ad454050a6d8ee72867ae043
+run_name: handsome-worm-386
+run_uuid: 96f9c116ad454050a6d8ee72867ae043
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1747694298580
+status: 3
+tags: []
+user_id: rania

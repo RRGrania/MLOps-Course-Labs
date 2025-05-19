@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/s30111011808329/MLOps-Course-Labs/MLOps-Course-Labs/mlruns/568248294312870829/237c66f126404a03aa0d92aebf6ce3a6/artifacts
+end_time: 1747693993390
+entry_point_name: ''
+experiment_id: '568248294312870829'
+lifecycle_stage: active
+run_id: 237c66f126404a03aa0d92aebf6ce3a6
+run_name: nimble-turtle-476
+run_uuid: 237c66f126404a03aa0d92aebf6ce3a6
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1747693975943
+status: 3
+tags: []
+user_id: rania

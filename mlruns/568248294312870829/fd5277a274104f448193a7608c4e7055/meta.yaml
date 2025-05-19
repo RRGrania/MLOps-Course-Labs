@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/s30111011808329/MLOps-Course-Labs/MLOps-Course-Labs/mlruns/568248294312870829/fd5277a274104f448193a7608c4e7055/artifacts
+end_time: 1747693487958
+entry_point_name: ''
+experiment_id: '568248294312870829'
+lifecycle_stage: active
+run_id: fd5277a274104f448193a7608c4e7055
+run_name: luxuriant-gull-447
+run_uuid: fd5277a274104f448193a7608c4e7055
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1747693460090
+status: 3
+tags: []
+user_id: rania

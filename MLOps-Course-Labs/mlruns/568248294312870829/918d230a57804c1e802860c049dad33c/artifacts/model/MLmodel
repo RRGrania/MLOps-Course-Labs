@@ -1,0 +1,41 @@
+artifact_path: model
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.13.2
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.6.1
+is_signature_from_type_hint: false
+mlflow_version: 2.22.0
+model_size_bytes: 18881886
+model_uuid: c1b1054a89cc48ed9ffc974a4ae909c8
+prompts: null
+run_id: 918d230a57804c1e802860c049dad33c
+saved_input_example_info:
+  artifact_path: input_example.json
+  pandas_orient: split
+  serving_input_path: serving_input_example.json
+  type: dataframe
+signature:
+  inputs: '[{"type": "double", "name": "CreditScore", "required": true}, {"type":
+    "double", "name": "Age", "required": true}, {"type": "double", "name": "Tenure",
+    "required": true}, {"type": "double", "name": "Balance", "required": true}, {"type":
+    "double", "name": "NumOfProducts", "required": true}, {"type": "double", "name":
+    "HasCrCard", "required": true}, {"type": "double", "name": "IsActiveMember", "required":
+    true}, {"type": "double", "name": "EstimatedSalary", "required": true}, {"type":
+    "boolean", "name": "Geography_France", "required": true}, {"type": "boolean",
+    "name": "Geography_Germany", "required": true}, {"type": "boolean", "name": "Geography_Spain",
+    "required": true}, {"type": "boolean", "name": "Gender_Female", "required": true},
+    {"type": "boolean", "name": "Gender_Male", "required": true}]'
+  outputs: '[{"type": "long", "required": true}]'
+  params: null
+type_hint_from_example: false
+utc_time_created: '2025-05-19 22:34:43.044299'

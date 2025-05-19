@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/s30111011808329/MLOps-Course-Labs/MLOps-Course-Labs/mlruns/568248294312870829/c30744eaddd948c1a365265089710af2/artifacts
+end_time: 1747680800324
+entry_point_name: ''
+experiment_id: '568248294312870829'
+lifecycle_stage: active
+run_id: c30744eaddd948c1a365265089710af2
+run_name: gregarious-shark-590
+run_uuid: c30744eaddd948c1a365265089710af2
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1747680781117
+status: 3
+tags: []
+user_id: rania
