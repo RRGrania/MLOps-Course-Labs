@@ -1,4 +1,7 @@
-mlflow==2.22.0
+fastapi
+uvicorn
+prometheus-client
+mlflow==2.22.0 
 cloudpickle==3.1.1
 numpy==2.2.5
 pandas==2.2.3

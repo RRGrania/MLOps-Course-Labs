@@ -1,9 +1,12 @@
 import os
 import joblib
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Response
 from pydantic import BaseModel
 from typing import List, Dict
 import logging
+from prometheus_client import generate_latest, CONTENT_TYPE_LATEST
+
+
 
 # Setup logging
 logging.basicConfig(level=logging.INFO)
@@ -65,3 +68,8 @@ async def predict(request: PredictionRequest):
     logger.info(f"Predictions: {preds.tolist()}")
 
     return {"predictions": preds.tolist()}
+
+
+@app.get("/metrics")
+async def metrics():
+    return Response(content=generate_latest(), media_type=CONTENT_TYPE_LATEST)
