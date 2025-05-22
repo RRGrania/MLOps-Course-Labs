@@ -2,7 +2,7 @@ name: CI/CD to ECR and EC2
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "feature/api" ]
 
 jobs:
   test-build-push:
