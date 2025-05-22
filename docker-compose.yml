@@ -5,7 +5,7 @@ services:
     image: 60795916912.dkr.ecr.us-east-1.amazonaws.com/churn-prediction:rania30111
     container_name: fastapi-app
     ports:
-      - "8000:8000"
+      - "443:8000"
     networks:
       - monitoring
 
@@ -17,7 +17,7 @@ services:
     command:
       - "--config.file=/etc/prometheus/prometheus.yml"
     ports:
-      - "9090:9090"
+      - "9091:9090"
     networks:
       - monitoring
 
@@ -25,7 +25,7 @@ services:
     image: grafana/grafana:latest
     container_name: grafana
     ports:
-      - "3000:3000"
+      - "3001:3000"
     networks:
       - monitoring
 

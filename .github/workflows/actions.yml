@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Repository
+    - name: Checkout Code
       uses: actions/checkout@v3
 
     - name: Setup Python
@@ -20,7 +20,7 @@ jobs:
     - name: Run Unit Tests
       run: |
         pip install -r requirements.txt
-        python -c "import sys; print('Python OK:', sys.version)"
+        pytest
 
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v2
@@ -33,24 +33,27 @@ jobs:
       id: login-ecr
       uses: aws-actions/amazon-ecr-login@v2
 
-    - name: Build, Tag and Push Docker Image to ECR
+    - name: Build, Tag and Push Docker Image
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-        IMAGE_TAG: rania30111
+        IMAGE_TAG: rania30111  
       run: |
         docker build -t churn-prediction:$IMAGE_TAG .
         docker tag churn-prediction:$IMAGE_TAG $ECR_REGISTRY/churn-prediction:$IMAGE_TAG
         docker push $ECR_REGISTRY/churn-prediction:$IMAGE_TAG
 
-    - name: Deploy to EC2
+    - name: Deploy to EC2 via SSH
       uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.EC2_HOST }}
         username: ${{ secrets.EC2_USERNAME }}
         key: ${{ secrets.EC2_SSH_KEY }}
         script: |
+          mkdir -p ~/rania
+          cd ~/rania
+          git clone https://github.com/RRGrania/MLOps-Course-Labs.git
+          cd MLOps-Course-Labs
           aws ecr get-login-password --region ${{ secrets.AWS_REGION }} | docker login --username AWS --password-stdin ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com
-          docker pull ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/churn-prediction:rania30111
-          docker stop churn-prediction || true
-          docker rm churn-prediction || true
-          docker run -d -p 443:8005 --name churn-prediction ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/churn-prediction:rania30111
+          docker-compose down || true
+          docker-compose pull
+          docker-compose up -d
