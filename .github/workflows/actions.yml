@@ -53,4 +53,4 @@ jobs:
           docker pull ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/churn-prediction:rania30111
           docker stop churn-prediction || true
           docker rm churn-prediction || true
-          docker run -d -p 80:8005 --name churn-prediction ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/churn-prediction:rania30111
+          docker run -d -p 443:8005 --name churn-prediction ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/churn-prediction:rania30111
