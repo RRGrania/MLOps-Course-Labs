@@ -5,7 +5,7 @@ on:
     branches: [ "feature/api" ]
 
 jobs:
-  test-build-push:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -17,22 +17,27 @@ jobs:
       with:
         python-version: '3.11'
 
-    - name:  Unit Tests
+    - name: Unit Tests
       run: |
         pip install -r requirements.txt
         python -c "import sys; print('Python OK:', sys.version)"
 
-    # - name: Configure AWS credentials
-    #   uses: aws-actions/configure-aws-credentials@v2
-    #   with:
-    #     aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-    #     aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-    #     aws-region: us-east-1
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v2
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-east-1
 
-    # - name: Login to Amazon ECR
-    #   id: login-ecr
-    #   uses: aws-actions/amazon-ecr-login@v2
+    - name: Login to Amazon ECR
+      id: login-ecr
+      uses: aws-actions/amazon-ecr-login@v2
 
-    - name: Build Docker Image
+    - name: Build, Tag and Push Docker Image to ECR
+      env:
+        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+        IMAGE_TAG: rania30111
       run: |
-        docker build -t churn-prediction:test .
+        docker build -t churn-prediction:$IMAGE_TAG .
+        docker tag churn-prediction:$IMAGE_TAG $ECR_REGISTRY/churn-prediction:$IMAGE_TAG
+        docker push $ECR_REGISTRY/churn-prediction:$IMAGE_TAG
